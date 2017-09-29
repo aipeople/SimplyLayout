@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Su Xing-Yu" => "aipeople0513@gmail.com" }
+  s.author             = { "Su, Hsing-Yu" => "aipeople0513@gmail.com" }
   # Or just: s.author    = "Su Xing-Yu"
   # s.authors            = { "Su Xing-Yu" => "email@address.com" }
   # s.social_media_url   = "http://twitter.com/Su Xing-Yu"
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
+  # s.platform     = :ios
   s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
@@ -117,7 +117,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
