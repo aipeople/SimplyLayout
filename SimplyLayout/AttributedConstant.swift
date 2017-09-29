@@ -43,11 +43,6 @@ extension Int {
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: Int, rhs: Float) -> AttributedConstant {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
-    
     public static func ~(lhs: Int, rhs: UILayoutPriority) -> AttributedConstant {
         
         return AttributedConstant(constant: CGFloat(lhs), priority: rhs)
@@ -81,11 +76,6 @@ extension Double {
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: Double, rhs: Float) -> AttributedConstant {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
-    
     public static func ~(lhs: Double, rhs: UILayoutPriority) -> AttributedConstant {
         
         return AttributedConstant(constant: CGFloat(lhs), priority: rhs)
@@ -117,11 +107,6 @@ extension CGFloat {
     public static func ~(lhs: CGFloat, rhs: CGFloat) -> AttributedConstant {
         
         return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: CGFloat, rhs: Float) -> AttributedConstant {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
     }
     
     public static func ~(lhs: CGFloat, rhs: UILayoutPriority) -> AttributedConstant {

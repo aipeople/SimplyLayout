@@ -15,7 +15,7 @@ import UIKit
 
 extension NSLayoutConstraint {
     
-    internal func setup(withPriority priority: UILayoutPriority, activated: Bool = SimplyLayout.config.defaultActivation) -> NSLayoutConstraint {
+    internal func setup(withPriority priority: UILayoutPriority = SimplyLayout.config.defaultPriority, activated: Bool = SimplyLayout.config.defaultActivation) -> NSLayoutConstraint {
         
         self.priority = priority
         self.isActive = activated

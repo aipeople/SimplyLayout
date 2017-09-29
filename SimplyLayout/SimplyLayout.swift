@@ -22,6 +22,6 @@ public class SimplyLayout {
 
 public class SimplyLayoutConfiguration {
     
-    public var defaultPriority: UILayoutPriority = .required
+    public var defaultPriority: UILayoutPriority = UILayoutPriorityRequired
     public var defaultActivation: Bool = true
 }

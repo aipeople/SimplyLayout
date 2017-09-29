@@ -14,19 +14,19 @@ public extension NSLayoutXAxisAnchor {
     @discardableResult
     public static func ==(lhs: NSLayoutXAxisAnchor, rhs: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(equalTo: rhs).setup()
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutXAxisAnchor, rhs: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(lessThanOrEqualTo: rhs).setup()
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutXAxisAnchor, rhs: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(greaterThanOrEqualTo: rhs).setup()
     }
     
     @discardableResult
@@ -95,11 +95,6 @@ extension NSLayoutXAxisAnchor {
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: NSLayoutXAxisAnchor, rhs: Float) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
-    
     public static func ~(lhs: NSLayoutXAxisAnchor, rhs: UILayoutPriority) -> AttributedAnchor<NSLayoutXAxisAnchor> {
         
         return AttributedAnchor(anchor: lhs, constant: 0, priority: rhs)
@@ -129,37 +124,37 @@ public extension NSLayoutYAxisAnchor {
     @discardableResult
     public static func ==(lhs: NSLayoutYAxisAnchor, rhs: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(equalTo: rhs).setup()
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutYAxisAnchor, rhs: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(lessThanOrEqualTo: rhs).setup()
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutYAxisAnchor, rhs: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(greaterThanOrEqualTo: rhs).setup()
     }
     
     @discardableResult
     public static func ==(lhs: NSLayoutYAxisAnchor, rhs: AttributedAnchor<NSLayoutYAxisAnchor>) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalTo: rhs.anchor, constant: rhs.constant).setup(withPriority: .required, activated: rhs.shouldActivate)
+        return lhs.constraint(equalTo: rhs.anchor, constant: rhs.constant).setup(activated: rhs.shouldActivate)
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutYAxisAnchor, rhs: AttributedAnchor<NSLayoutYAxisAnchor>) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualTo: rhs.anchor, constant: rhs.constant).setup(withPriority: .required, activated: rhs.shouldActivate)
+        return lhs.constraint(lessThanOrEqualTo: rhs.anchor, constant: rhs.constant).setup(activated: rhs.shouldActivate)
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutYAxisAnchor, rhs: AttributedAnchor<NSLayoutYAxisAnchor>) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualTo: rhs.anchor, constant: rhs.constant).setup(withPriority: .required, activated: rhs.shouldActivate)
+        return lhs.constraint(greaterThanOrEqualTo: rhs.anchor, constant: rhs.constant).setup(activated: rhs.shouldActivate)
     }
     
     public static func +(lhs: NSLayoutYAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutYAxisAnchor> {
@@ -208,11 +203,6 @@ extension NSLayoutYAxisAnchor {
     public static func ~(lhs: NSLayoutYAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutYAxisAnchor> {
         
         return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutYAxisAnchor, rhs: Float) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
     }
     
     public static func ~(lhs: NSLayoutYAxisAnchor, rhs: UILayoutPriority) -> AttributedAnchor<NSLayoutYAxisAnchor> {

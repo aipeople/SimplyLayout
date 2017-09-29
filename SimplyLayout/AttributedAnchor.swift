@@ -83,11 +83,6 @@ extension AttributedAnchor {
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: AttributedAnchor, rhs: Float) -> AttributedAnchor {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
-    
     public static func ~(lhs: AttributedAnchor, rhs: UILayoutPriority) -> AttributedAnchor {
         
         var anchor = lhs

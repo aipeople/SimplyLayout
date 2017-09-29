@@ -15,19 +15,19 @@ public extension NSLayoutDimension {
     @discardableResult
     public static func ==(lhs: NSLayoutDimension, rhs: NSLayoutDimension) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(equalTo: rhs).setup()
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutDimension, rhs: NSLayoutDimension) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(lessThanOrEqualTo: rhs).setup()
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutDimension, rhs: NSLayoutDimension) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualTo: rhs).setup(withPriority: .required)
+        return lhs.constraint(greaterThanOrEqualTo: rhs).setup()
     }
     
     // MARK: To mudified dimension
@@ -72,55 +72,55 @@ public extension NSLayoutDimension {
     @discardableResult
     public static func ==(lhs: NSLayoutDimension, rhs: CGFloat) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalToConstant: rhs).setup(withPriority: .required)
+        return lhs.constraint(equalToConstant: rhs).setup()
     }
     
     @discardableResult
     public static func ==(lhs: NSLayoutDimension, rhs: Int) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalToConstant: CGFloat(rhs)).setup(withPriority: .required)
+        return lhs.constraint(equalToConstant: CGFloat(rhs)).setup()
     }
     
     @discardableResult
     public static func ==(lhs: NSLayoutDimension, rhs: Double) -> NSLayoutConstraint {
         
-        return lhs.constraint(equalToConstant: CGFloat(rhs)).setup(withPriority: .required)
+        return lhs.constraint(equalToConstant: CGFloat(rhs)).setup()
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutDimension, rhs: CGFloat) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualToConstant: rhs).setup(withPriority: .required)
+        return lhs.constraint(lessThanOrEqualToConstant: rhs).setup()
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutDimension, rhs: Int) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualToConstant: CGFloat(rhs)).setup(withPriority: .required)
+        return lhs.constraint(lessThanOrEqualToConstant: CGFloat(rhs)).setup()
     }
     
     @discardableResult
     public static func <=(lhs: NSLayoutDimension, rhs: Double) -> NSLayoutConstraint {
         
-        return lhs.constraint(lessThanOrEqualToConstant: CGFloat(rhs)).setup(withPriority: .required)
+        return lhs.constraint(lessThanOrEqualToConstant: CGFloat(rhs)).setup()
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutDimension, rhs: CGFloat) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualToConstant: rhs).setup(withPriority: .required)
+        return lhs.constraint(greaterThanOrEqualToConstant: rhs).setup()
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutDimension, rhs: Int) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualToConstant: CGFloat(rhs)).setup(withPriority: .required)
+        return lhs.constraint(greaterThanOrEqualToConstant: CGFloat(rhs)).setup()
     }
     
     @discardableResult
     public static func >=(lhs: NSLayoutDimension, rhs: Double) -> NSLayoutConstraint {
         
-        return lhs.constraint(greaterThanOrEqualToConstant: CGFloat(rhs)).setup(withPriority: .required)
+        return lhs.constraint(greaterThanOrEqualToConstant: CGFloat(rhs)).setup()
     }
     
     // MARK: Constant

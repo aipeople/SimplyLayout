@@ -106,11 +106,6 @@ extension AttributedDimension {
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: AttributedDimension, rhs: Float) -> AttributedDimension {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
-    
     public static func ~(lhs: AttributedDimension, rhs: UILayoutPriority) -> AttributedDimension {
         
         var dimension = lhs
