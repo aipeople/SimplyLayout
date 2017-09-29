@@ -14,20 +14,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let view1 = UIView()
-        let view2 = UIView()
+        let testView = UIView()
         
-        view.addSubview(view1)
-        view.addSubview(view2)
+        view.addSubview(testView)
         
-        view1.widthAnchor   == view.widthAnchor * 0.5 + 50 ~ 750
-        view1.heightAnchor  == 150
-        view1.leadingAnchor == view.leadingAnchor + 50  ~ 750
-        view1.leadingAnchor == --view.leadingAnchor + 150 ~ 800
-        view1.bottomAnchor  == view.bottomAnchor  - 100
-        view1.backgroundColor = .red
+        testView.widthAnchor   == view.widthAnchor * 0.5 + 50 ~ 750
+        testView.heightAnchor  == 150
+        testView.leadingAnchor == view.leadingAnchor + 50  ~ 750
+        testView.bottomAnchor  == view.bottomAnchor  - 100
+        testView.backgroundColor = .red
         
-        print("----- \(view1.constraints)")
+        let constraint =
+        testView.leadingAnchor == --view.leadingAnchor + 150 ~ 800
+        
+        DispatchQueue.global().async {
+            sleep(2)
+            DispatchQueue.main.async {
+                constraint.isActive = true
+            }
+        }
+        
+        print("----- \(testView.constraints)")
         print("----- \(view.constraints)")
     }
 
