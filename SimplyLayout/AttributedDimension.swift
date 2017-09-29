@@ -1,5 +1,5 @@
 //
-//  ModifiedDimension.swift
+//  AttributedDimension.swift
 //  SimplyLayout
 //
 //  Created by aipeople on 28/09/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-public struct ModifiedDimension {
+public struct AttributedDimension {
     
     public let dimension:  NSLayoutDimension
     public var priority:   UILayoutPriority
@@ -32,55 +32,55 @@ public struct ModifiedDimension {
 }
 
 
-extension ModifiedDimension {
+extension AttributedDimension {
     
-    public static func +(lhs: ModifiedDimension, rhs: Int) -> ModifiedDimension {
+    public static func +(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
         
         return lhs + CGFloat(rhs)
     }
     
-    public static func +(lhs: ModifiedDimension, rhs: Double) -> ModifiedDimension {
+    public static func +(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
         
         return lhs + CGFloat(rhs)
     }
     
-    public static func +(lhs: ModifiedDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func +(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
         
         var dimension = lhs
         dimension.constant += rhs
         return dimension
     }
     
-    public static func -(lhs: ModifiedDimension, rhs: Int) -> ModifiedDimension {
+    public static func -(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
         
         return lhs - CGFloat(rhs)
     }
     
-    public static func -(lhs: ModifiedDimension, rhs: Double) -> ModifiedDimension {
+    public static func -(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
         
         return lhs - CGFloat(rhs)
     }
     
-    public static func -(lhs: ModifiedDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func -(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
         
         return lhs + -rhs
     }
 }
 
 
-extension ModifiedDimension {
+extension AttributedDimension {
 
-    public static func *(lhs: ModifiedDimension, rhs: Int) -> ModifiedDimension {
+    public static func *(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
         
         return lhs * CGFloat(rhs)
     }
     
-    public static func *(lhs: ModifiedDimension, rhs: Double) -> ModifiedDimension {
+    public static func *(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
         
         return lhs * CGFloat(rhs)
     }
     
-    public static func *(lhs: ModifiedDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func *(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
         
         var dimension = lhs
         dimension.multiplier *= rhs
@@ -89,29 +89,29 @@ extension ModifiedDimension {
 }
 
 
-extension ModifiedDimension {
+extension AttributedDimension {
     
-    public static func ~(lhs: ModifiedDimension, rhs: Int) -> ModifiedDimension {
+    public static func ~(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
         
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: ModifiedDimension, rhs: Double) -> ModifiedDimension {
+    public static func ~(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
         
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: ModifiedDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func ~(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
         
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: ModifiedDimension, rhs: Float) -> ModifiedDimension {
+    public static func ~(lhs: AttributedDimension, rhs: Float) -> AttributedDimension {
         
         return lhs ~ UILayoutPriority(rawValue: rhs)
     }
     
-    public static func ~(lhs: ModifiedDimension, rhs: UILayoutPriority) -> ModifiedDimension {
+    public static func ~(lhs: AttributedDimension, rhs: UILayoutPriority) -> AttributedDimension {
         
         var dimension = lhs
         dimension.priority = rhs
@@ -119,9 +119,9 @@ extension ModifiedDimension {
     }
 }
 
-extension ModifiedDimension {
+extension AttributedDimension {
     
-    public static prefix func --(lhs: ModifiedDimension) -> ModifiedDimension {
+    public static prefix func --(lhs: AttributedDimension) -> AttributedDimension {
         
         guard lhs.shouldActivate else {
             return lhs
@@ -132,7 +132,7 @@ extension ModifiedDimension {
         return anchor
     }
     
-    public static prefix func ++(lhs: ModifiedDimension) -> ModifiedDimension {
+    public static prefix func ++(lhs: AttributedDimension) -> AttributedDimension {
         
         guard !lhs.shouldActivate else {
             return lhs

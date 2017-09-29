@@ -1,15 +1,15 @@
 //
-//  ModifiedAnchor.swift
+//  AttributedAnchor.swift
 //  SimplyLayout
 //
 //  Created by aipeople on 27/09/2017.
 //  Copyright © 2017 aipeople. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
-public struct ModifiedAnchor<AnchorType> {
+public struct AttributedAnchor<AnchorType> {
     
     public let anchor:   NSLayoutAnchor<AnchorType>
     public var priority: UILayoutPriority
@@ -28,36 +28,36 @@ public struct ModifiedAnchor<AnchorType> {
     }
 }
 
-extension ModifiedAnchor {
+extension AttributedAnchor {
     
-    public static func +(lhs: ModifiedAnchor, rhs: Int) -> ModifiedAnchor {
+    public static func +(lhs: AttributedAnchor, rhs: Int) -> AttributedAnchor {
         
         return lhs + CGFloat(rhs)
     }
     
-    public static func +(lhs: ModifiedAnchor, rhs: Double) -> ModifiedAnchor {
+    public static func +(lhs: AttributedAnchor, rhs: Double) -> AttributedAnchor {
         
         return lhs + CGFloat(rhs)
     }
     
-    public static func +(lhs: ModifiedAnchor, rhs: CGFloat) -> ModifiedAnchor {
+    public static func +(lhs: AttributedAnchor, rhs: CGFloat) -> AttributedAnchor {
         
         var anchor = lhs
         anchor.constant += rhs
         return anchor
     }
     
-    public static func -(lhs: ModifiedAnchor, rhs: Int) -> ModifiedAnchor {
+    public static func -(lhs: AttributedAnchor, rhs: Int) -> AttributedAnchor {
         
         return lhs - CGFloat(rhs)
     }
     
-    public static func -(lhs: ModifiedAnchor, rhs: Double) -> ModifiedAnchor {
+    public static func -(lhs: AttributedAnchor, rhs: Double) -> AttributedAnchor {
         
         return lhs - CGFloat(rhs)
     }
     
-    public static func -(lhs: ModifiedAnchor, rhs: CGFloat) -> ModifiedAnchor {
+    public static func -(lhs: AttributedAnchor, rhs: CGFloat) -> AttributedAnchor {
         
         return lhs + -rhs
     }
@@ -66,29 +66,29 @@ extension ModifiedAnchor {
 
 infix operator ~: SimplyLayoutPriorityPrecedenceGroup
 
-extension ModifiedAnchor {
+extension AttributedAnchor {
 
-    public static func ~(lhs: ModifiedAnchor, rhs: Int) -> ModifiedAnchor {
+    public static func ~(lhs: AttributedAnchor, rhs: Int) -> AttributedAnchor {
         
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: ModifiedAnchor, rhs: Double) -> ModifiedAnchor {
+    public static func ~(lhs: AttributedAnchor, rhs: Double) -> AttributedAnchor {
         
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: ModifiedAnchor, rhs: CGFloat) -> ModifiedAnchor {
+    public static func ~(lhs: AttributedAnchor, rhs: CGFloat) -> AttributedAnchor {
         
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: ModifiedAnchor, rhs: Float) -> ModifiedAnchor {
+    public static func ~(lhs: AttributedAnchor, rhs: Float) -> AttributedAnchor {
         
         return lhs ~ UILayoutPriority(rawValue: rhs)
     }
     
-    public static func ~(lhs: ModifiedAnchor, rhs: UILayoutPriority) -> ModifiedAnchor {
+    public static func ~(lhs: AttributedAnchor, rhs: UILayoutPriority) -> AttributedAnchor {
         
         var anchor = lhs
         anchor.priority = rhs
@@ -100,9 +100,9 @@ extension ModifiedAnchor {
 prefix operator ++
 prefix operator --
 
-extension ModifiedAnchor {
+extension AttributedAnchor {
     
-    public static prefix func --(lhs: ModifiedAnchor) -> ModifiedAnchor {
+    public static prefix func --(lhs: AttributedAnchor) -> AttributedAnchor {
         
         guard lhs.shouldActivate else {
             return lhs
@@ -113,7 +113,7 @@ extension ModifiedAnchor {
         return anchor
     }
     
-    public static prefix func ++(lhs: ModifiedAnchor) -> ModifiedAnchor {
+    public static prefix func ++(lhs: AttributedAnchor) -> AttributedAnchor {
         
         guard !lhs.shouldActivate else {
             return lhs

@@ -32,38 +32,38 @@ public extension NSLayoutDimension {
     
     // MARK: To mudified dimension
     @discardableResult
-    public static func ==(lhs: NSLayoutDimension, rhs: ModifiedDimension) -> NSLayoutConstraint {
+    public static func ==(lhs: NSLayoutDimension, rhs: AttributedDimension) -> NSLayoutConstraint {
         
         return lhs.constraint(equalTo: rhs.dimension, multiplier: rhs.multiplier, constant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
     @discardableResult
-    public static func <=(lhs: NSLayoutDimension, rhs: ModifiedDimension) -> NSLayoutConstraint {
+    public static func <=(lhs: NSLayoutDimension, rhs: AttributedDimension) -> NSLayoutConstraint {
         
         return lhs.constraint(lessThanOrEqualTo: rhs.dimension, multiplier: rhs.multiplier, constant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
     @discardableResult
-    public static func >=(lhs: NSLayoutDimension, rhs: ModifiedDimension) -> NSLayoutConstraint {
+    public static func >=(lhs: NSLayoutDimension, rhs: AttributedDimension) -> NSLayoutConstraint {
         
         return lhs.constraint(greaterThanOrEqualTo: rhs.dimension, multiplier: rhs.multiplier, constant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
     // MARK: To mudified constant
     @discardableResult
-    public static func ==(lhs: NSLayoutDimension, rhs: ModifiedConstant) -> NSLayoutConstraint {
+    public static func ==(lhs: NSLayoutDimension, rhs: AttributedConstant) -> NSLayoutConstraint {
         
         return lhs.constraint(equalToConstant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
     @discardableResult
-    public static func <=(lhs: NSLayoutDimension, rhs: ModifiedConstant) -> NSLayoutConstraint {
+    public static func <=(lhs: NSLayoutDimension, rhs: AttributedConstant) -> NSLayoutConstraint {
         
         return lhs.constraint(lessThanOrEqualToConstant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
     @discardableResult
-    public static func >=(lhs: NSLayoutDimension, rhs: ModifiedConstant) -> NSLayoutConstraint {
+    public static func >=(lhs: NSLayoutDimension, rhs: AttributedConstant) -> NSLayoutConstraint {
         
         return lhs.constraint(greaterThanOrEqualToConstant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
@@ -124,62 +124,62 @@ public extension NSLayoutDimension {
     }
     
     // MARK: Constant
-    public static func +(lhs: NSLayoutDimension, rhs: Int) -> ModifiedDimension {
+    public static func +(lhs: NSLayoutDimension, rhs: Int) -> AttributedDimension {
         
         return lhs + CGFloat(rhs)
     }
     
-    public static func +(lhs: NSLayoutDimension, rhs: Double) -> ModifiedDimension {
+    public static func +(lhs: NSLayoutDimension, rhs: Double) -> AttributedDimension {
         
         return lhs + CGFloat(rhs)
     }
     
-    public static func +(lhs: NSLayoutDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func +(lhs: NSLayoutDimension, rhs: CGFloat) -> AttributedDimension {
         
-        return ModifiedDimension(dimension: lhs, multiplier: 1, constant: rhs)
+        return AttributedDimension(dimension: lhs, multiplier: 1, constant: rhs)
     }
     
-    public static func -(lhs: NSLayoutDimension, rhs: Int) -> ModifiedDimension {
-        
-        return lhs + -CGFloat(rhs)
-    }
-    
-    public static func -(lhs: NSLayoutDimension, rhs: Double) -> ModifiedDimension {
+    public static func -(lhs: NSLayoutDimension, rhs: Int) -> AttributedDimension {
         
         return lhs + -CGFloat(rhs)
     }
     
-    public static func -(lhs: NSLayoutDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func -(lhs: NSLayoutDimension, rhs: Double) -> AttributedDimension {
+        
+        return lhs + -CGFloat(rhs)
+    }
+    
+    public static func -(lhs: NSLayoutDimension, rhs: CGFloat) -> AttributedDimension {
         
         return lhs + -rhs
     }
     
     // MARK: Multiplier
-    public static func *(lhs: NSLayoutDimension, rhs: Int) -> ModifiedDimension {
+    public static func *(lhs: NSLayoutDimension, rhs: Int) -> AttributedDimension {
         
         return lhs * CGFloat(rhs)
     }
     
-    public static func *(lhs: NSLayoutDimension, rhs: Double) -> ModifiedDimension {
+    public static func *(lhs: NSLayoutDimension, rhs: Double) -> AttributedDimension {
         
         return lhs * CGFloat(rhs)
     }
     
-    public static func *(lhs: NSLayoutDimension, rhs: CGFloat) -> ModifiedDimension {
+    public static func *(lhs: NSLayoutDimension, rhs: CGFloat) -> AttributedDimension {
         
-        return ModifiedDimension(dimension: lhs, multiplier: rhs, constant: 0)
+        return AttributedDimension(dimension: lhs, multiplier: rhs, constant: 0)
     }
 }
 
 extension NSLayoutDimension {
     
-    public static prefix func --(lhs: NSLayoutDimension) -> ModifiedDimension {
+    public static prefix func --(lhs: NSLayoutDimension) -> AttributedDimension {
         
-        return ModifiedDimension(dimension: lhs, multiplier: 1, constant: 0)
+        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0)
     }
     
-    public static prefix func ++(lhs: NSLayoutDimension) -> ModifiedDimension {
+    public static prefix func ++(lhs: NSLayoutDimension) -> AttributedDimension {
         
-        return ModifiedDimension(dimension: lhs, multiplier: 1, constant: 0)
+        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0)
     }
 }

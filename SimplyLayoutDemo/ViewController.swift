@@ -12,30 +12,45 @@ import SimplyLayout
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        let testView = UIView()
+        let box = UIView()
+        box.backgroundColor = .lightGray
+        view.addSubview(box)
         
-        view.addSubview(testView)
+        // Setup globally configs
+        // Basically, configs should be set in `didFinishLaunchingWithOptions:`
+        //SimplyLayout.config.defaultActivation = true // Default value is `true`
+        //SimplyLayout.config.defaultPriority   = .required // Default value is `.required`
         
-        testView.widthAnchor   == view.widthAnchor * 0.5 + 50 ~ 750
-        testView.heightAnchor  == 150
-        testView.leadingAnchor == view.leadingAnchor + 50  ~ 750
-        testView.bottomAnchor  == view.bottomAnchor  - 100
-        testView.backgroundColor = .red
+        // Setup a constraint with constant by using `+` or `-`
+        box.widthAnchor == 100 // The constant can be Int, Double, CGFloat
         
-        let constraint =
-        testView.leadingAnchor == --view.leadingAnchor + 150 ~ 800
+        // Setup a constraint with mutiplier by using `*`
+        box.heightAnchor == box.superview!.heightAnchor * 0.25 + 40
         
+        // Setup a constraint with priority by using `~`
+        box.heightAnchor == box.superview!.heightAnchor * 0.25 ~ 750
+        
+        // Setup a constraint with activate or inactivate state by using `--` or `++`
+        box.centerXAnchor == box.superview!.centerXAnchor ~ 750 // The constraint will be activated based on the value of `defaultActivation` in configs.
+        box.centerXAnchor == --box.superview!.centerXAnchor + 100 // This will force the constraint stays in inactive mode after created.
+        
+        // Store the created constraint
+        let centerYConstraint = box.centerYAnchor == box.superview!.centerYAnchor
+        
+        // Modify the stored constraint
         DispatchQueue.global().async {
-            sleep(2)
+            sleep(3)
             DispatchQueue.main.async {
-                constraint.isActive = true
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    centerYConstraint.constant = 100
+                    self.view.layoutIfNeeded()
+                })
             }
         }
-        
-        print("----- \(testView.constraints)")
-        print("----- \(view.constraints)")
     }
 
     override func didReceiveMemoryWarning() {
