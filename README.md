@@ -1,8 +1,8 @@
 # SimplyLayout
 A swift syntactic sugar for anchor based Auto Layout
 
-# Setup A Constraint
-### Operators
+# Usage
+### Operator
 * `+`, `-` -> Set the constant
 * `*` -> Set the multiplier
 * `~` -> Set the priority
@@ -11,11 +11,13 @@ Example:
 ```` swift
 view.widthAnchor == 100
 // view.widthAnchor.constraint(equalToConstant: 100).isActive = true
+// view.translatesAutoresizingMaskIntoConstraints = false
 
 view.heightAnchor == view.superview!.heightAnchor * 0.25 + 40 ~ 750
 // let constraint = view.heightAnchor.constraint(equalTo: view.superview!.heightAnchor, multiplier: 0.25, constant: 40)
 // constraint.priority = UILayoutPriority(rawValue: 750)
 // constraint.isActive = true
+// view.translatesAutoresizingMaskIntoConstraints = false
 ````
 
 ### Activation
@@ -41,6 +43,14 @@ view.heightAnchor == view.superview!.heightAnchor * 0.25
 view.heightAnchor == ++view.superview!.heightAnchor * 0.25
 // let constraint = view.heightAnchor.constraint(equalTo: view.superview!.heightAnchor, multiplier: 0.25)
 // constraint.isActive = true
+````
+
+### Access the constraint
+A new created constraint can be accessed easily by using the `=` operator.
+
+Example:
+```` swift
+let constraint = view.heightAnchor == view.superview!.heightAnchor * 0.25
 ````
 
 # Configurations
