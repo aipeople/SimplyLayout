@@ -171,6 +171,35 @@ public extension NSLayoutDimension {
     }
 }
 
+
+extension NSLayoutDimension {
+    
+    public static func ~(lhs: NSLayoutDimension, rhs: Int) -> AttributedDimension {
+        
+        return lhs ~ Float(rhs)
+    }
+    
+    public static func ~(lhs: NSLayoutDimension, rhs: Double) -> AttributedDimension {
+        
+        return lhs ~ Float(rhs)
+    }
+    
+    public static func ~(lhs: NSLayoutDimension, rhs: CGFloat) -> AttributedDimension {
+        
+        return lhs ~ Float(rhs)
+    }
+    
+    public static func ~(lhs: NSLayoutDimension, rhs: Float) -> AttributedDimension {
+        
+        return lhs ~ UILayoutPriority(rawValue: rhs)
+    }
+    
+    public static func ~(lhs: NSLayoutDimension, rhs: UILayoutPriority) -> AttributedDimension {
+        
+        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0, priority: rhs)
+    }
+}
+
 extension NSLayoutDimension {
     
     public static prefix func --(lhs: NSLayoutDimension) -> AttributedDimension {
