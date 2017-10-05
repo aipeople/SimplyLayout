@@ -2,7 +2,6 @@
 A swift syntactic sugar for anchor based Auto Layout
 
 # Installation
---------------------
 ### CocoaPod
 ````
 # Swift 4
@@ -13,7 +12,6 @@ pod 'SimplyLayout', :git => 'https://github.com/aipeople/SimplyLayout.git', :tag
 ````
 
 # Usage
---------------------
 ### Operator
 * `+`, `-` -> Set the constant
 * `*` -> Set the multiplier
