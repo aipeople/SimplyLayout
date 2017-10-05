@@ -189,11 +189,6 @@ extension NSLayoutDimension {
         return lhs ~ Float(rhs)
     }
     
-    public static func ~(lhs: NSLayoutDimension, rhs: Float) -> AttributedDimension {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
-    
     public static func ~(lhs: NSLayoutDimension, rhs: UILayoutPriority) -> AttributedDimension {
         
         return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0, priority: rhs)
