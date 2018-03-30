@@ -1,6 +1,16 @@
 # SimplyLayout
 A swift syntactic sugar for anchor based Auto Layout
 
+# Installation
+### CocoaPod
+````
+# Swift 4
+pod 'SimplyLayout'
+
+# Swift 3
+pod 'SimplyLayout', :git => 'https://github.com/aipeople/SimplyLayout.git', :tag => 'swift3-1.0.1'
+````
+
 # Usage
 ### Operator
 * `+`, `-` -> Set the constant
