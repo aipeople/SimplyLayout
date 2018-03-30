@@ -9,7 +9,7 @@
 import UIKit
 
 
-public struct AttributedAnchor<AnchorType> {
+public struct AttributedAnchor<AnchorType> where AnchorType: AnyObject {
     
     public let anchor:   NSLayoutAnchor<AnchorType>
     public var priority: UILayoutPriority
