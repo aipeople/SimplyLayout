@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CD1AAF32178550D008E0580 /* CenterAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1AAF22178550D008E0580 /* CenterAnchor.swift */; };
 		239416061F6B86EE003C9B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239416051F6B86EE003C9B80 /* AppDelegate.swift */; };
 		239416081F6B86EE003C9B80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239416071F6B86EE003C9B80 /* ViewController.swift */; };
 		2394160B1F6B86EE003C9B80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239416091F6B86EE003C9B80 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1CD1AAF22178550D008E0580 /* CenterAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterAnchor.swift; sourceTree = "<group>"; };
 		239416021F6B86EE003C9B80 /* SimplyLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplyLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239416051F6B86EE003C9B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239416071F6B86EE003C9B80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				23ECC28D1F7E24A800CADD68 /* AttributedAnchor.swift */,
 				23ECC2891F7E24A800CADD68 /* AttributedConstant.swift */,
 				23ECC2881F7E24A800CADD68 /* AttributedDimension.swift */,
+				1CD1AAF22178550D008E0580 /* CenterAnchor.swift */,
 				23ECC28A1F7E24A800CADD68 /* NSLayoutAxisAnchorExtension.swift */,
 				23ECC2871F7E24A700CADD68 /* NSLayoutConstraintExtension.swift */,
 				23ECC28C1F7E24A800CADD68 /* NSLayoutDimensionExtension.swift */,
@@ -268,6 +271,7 @@
 				23ECC28F1F7E24A800CADD68 /* AttributedDimension.swift in Sources */,
 				23ECC2941F7E24A800CADD68 /* AttributedAnchor.swift in Sources */,
 				23ECC28E1F7E24A800CADD68 /* NSLayoutConstraintExtension.swift in Sources */,
+				1CD1AAF32178550D008E0580 /* CenterAnchor.swift in Sources */,
 				23ECC2911F7E24A800CADD68 /* NSLayoutAxisAnchorExtension.swift in Sources */,
 				23ECC2921F7E24A800CADD68 /* SimplyLayout.swift in Sources */,
 			);
