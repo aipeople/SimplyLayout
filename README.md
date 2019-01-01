@@ -4,8 +4,17 @@ A swift syntactic sugar for anchor based Auto Layout
 # Installation
 ### CocoaPod
 ````
-# Swift 4
+# Swift 4 with full functions, including `Core`, `Anchor` and `Group`
 pod 'SimplyLayout'
+
+# Swift 4 with syntactic sugar only
+pod 'SimplyLayout/Core'
+
+# Swift 4 with convenience virtual anchors (CenterAnchor, EdgeAnchor, etc.)
+pod 'SimplyLayout/Anchor'
+
+# Swift 4 with constraint grouping functions
+pod 'SimplyLayout/Group'
 
 # Swift 3
 pod 'SimplyLayout', :git => 'https://github.com/aipeople/SimplyLayout.git', :tag => 'swift3-1.0.1'
@@ -63,7 +72,62 @@ Example:
 let constraint = view.heightAnchor == view.superview!.heightAnchor * 0.25
 ````
 
+### Virtual Anchor
+Virtual anchors **are not** real `NSLayoutAnchor`. These anchors just help you create the constraints esily.
+* **`CenterAnchor`**
+```` swift
+view.centerAnchor == view.superview!.centerAnchor + CGPoint(x: 10, y: 10)
+// view.centerXAnchor == view.superview!.centerXAnchor + 10
+// view.centerYAnchor == view.superview!.centerYAnchor + 10
+````
+* **`EdgeAnchor`**
+```` swift
+view.edgeAnchor == view.superview!.edgeAnchor
+// view.topAnchor      == view.superview!.topAnchor
+// view.leadingAnchor  == view.superview!.leadingAnchor
+// view.bottomAnchor   == view.superview!.bottomAnchor
+// view.trailingAnchor == view.superview!.trailingAnchor
+
+view.edgeAnchor == view.superview!.edgeAnchor.insetBy(top: 10, left: 20, bottom: 10, right: 20)
+// view.edgeAnchor == view.superview!.edgeAnchor + UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+// -----------------------(equals to)------------------------
+// view.topAnchor      == view.superview!.topAnchor      + 10
+// view.leadingAnchor  == view.superview!.leadingAnchor  + 20
+// view.bottomAnchor   == view.superview!.bottomAnchor   - 10
+// view.trailingAnchor == view.superview!.trailingAnchor - 20
+````
+
+### Grouping
+Grouping functions require `SimplyLayout/Group` submodule. It provides a convenience way to group several constraints together. A group of constraints is represented by an array of NSLayoutConstraint, which can be activated/deactivated together.
+
+ Example:
+```` swift
+let boxA = UIView()
+let boxB = UIView()
+
+// `verticalConstraintGroup` is an array with NSLayoutConstraint.
+// In the following case, it will contains two constraints.
+let verticalConstraintGroup = NSLayoutConstraint.group {
+    boxA.centerXAnchor == boxA.superview!.centerXAnchor
+    boxB.centerXAnchor == boxB.superview!.centerXAnchor
+}
+ 
+// All the constraints created in the block won't be activated 
+let horizontalConstraintGroup = NSLayoutConstraint.group(activated: false) {
+    boxA.centerYAnchor == boxA.superview!.centerYAnchor
+    boxB.centerYAnchor == boxB.superview!.centerYAnchor
+}
+
+// Deactivate all constraints in the group
+verticalConstraintGroup.deactivateAll()
+
+// Activate all constraints in the group
+horizontalConstraintGroup.activateAll()
+````
+
 # Configurations
-Default behavior can be set in `SimplyLayout.config`.
+* `postNotificationWhenConstrantCreate`: A notification named `SimplyLayout.constraintCreatedNotification` will be posted immediately after a constraint has been setup by using the syntax of SimplyLayout. Default value is `false`.
+
+Constraint related behavior can be set in `SimplyLayout.config`.
 * `defaultPriority`：Default value is `.required`
 * `defaultActivation`：Default value is `true`
