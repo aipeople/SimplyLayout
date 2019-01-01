@@ -53,3 +53,12 @@ extension UIView {
         return CenterAnchor(xAnchor: centerXAnchor, yAnchor: centerYAnchor, constant: .zero)
     }
 }
+
+
+@available(iOS 9.0, *)
+extension UILayoutGuide {
+    
+    public var centerAnchor: CenterAnchor {
+        return CenterAnchor(xAnchor: centerXAnchor, yAnchor: centerYAnchor, constant: .zero)
+    }
+}
