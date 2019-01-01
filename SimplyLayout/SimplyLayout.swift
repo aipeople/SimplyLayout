@@ -14,15 +14,11 @@ precedencegroup SimplyLayoutPriorityPrecedenceGroup {
     lowerThan: NilCoalescingPrecedence
 }
 
-public protocol SimplyLayoutDelegate: AnyObject {
-    
-    func simplyLayoutDidCreateConstraint(_ constraint: NSLayoutConstraint)
-}
-
 public class SimplyLayout {
     
     public static let config = SimplyLayoutConfiguration()
-    public static weak var delegate: SimplyLayoutDelegate?
+    public static var postNotificationWhenConstrantCreate: Bool = false
+    public static let constraintCreatedNotification = Notification.Name(rawValue: "SimplyLayout.constraintCreatedNotification")
 }
 
 

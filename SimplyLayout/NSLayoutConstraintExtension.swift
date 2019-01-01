@@ -24,7 +24,11 @@ extension NSLayoutConstraint {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        SimplyLayout.delegate?.simplyLayoutDidCreateConstraint(self)
+        if  SimplyLayout.postNotificationWhenConstrantCreate {
+            
+            let notification = Notification(name: SimplyLayout.constraintCreatedNotification, object: self, userInfo: nil)
+            NotificationQueue.default.enqueue(notification, postingStyle: .now)
+        }
         
         return self
     }
