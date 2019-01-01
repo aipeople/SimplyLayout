@@ -2,18 +2,24 @@
 //  CenterAnchor.swift
 //  SimplyLayout
 //
-//  Created by aipeople on 05/10/2017.
-//  Copyright © 2017 aipeople. All rights reserved.
+//  Created by Sean, Su on 2019/1/1.
+//  Copyright © 2019 aipeople. All rights reserved.
 //
 
 import UIKit
 
-struct CenterAnchor {
+
+public struct CenterAnchor {
     
-    typealias CenterAnchorSet = (centerX: NSLayoutXAxisAnchor, centerY: NSLayoutYAxisAnchor)
+    let xAnchor:  NSLayoutXAxisAnchor
+    let yAnchor:  NSLayoutYAxisAnchor
+    let constant: CGPoint
     
-    let anchorSet: CenterAnchorSet
-    
+    fileprivate init(xAnchor: NSLayoutXAxisAnchor, yAnchor: NSLayoutYAxisAnchor, constant: CGPoint) {
+        self.xAnchor  = xAnchor
+        self.yAnchor  = yAnchor
+        self.constant = constant
+    }
 }
 
 
@@ -23,17 +29,27 @@ extension CenterAnchor {
     public static func ==(lhs: CenterAnchor, rhs: CenterAnchor) -> [NSLayoutConstraint] {
         
         return [
-            lhs.anchorSet.centerX  == rhs.anchorSet.centerX,
-            lhs.anchorSet.centerY  == rhs.anchorSet.centerY
+            lhs.xAnchor == rhs.xAnchor + (rhs.constant.x - lhs.constant.x),
+            lhs.yAnchor == rhs.yAnchor + (rhs.constant.y - lhs.constant.y)
         ]
     }
     
+    @discardableResult
+    public static func +(lhs: CenterAnchor, constant: CGPoint) -> CenterAnchor {
+        return CenterAnchor(
+            xAnchor: lhs.xAnchor,
+            yAnchor: lhs.yAnchor,
+            constant: CGPoint(
+                x: lhs.constant.x + constant.x,
+                y: lhs.constant.y + constant.y
+            ))
+    }
 }
+
 
 extension UIView {
     
-    var centerAnchor: CenterAnchor {
-        return CenterAnchor(anchorSet: (centerXAnchor, centerYAnchor))
+    public var centerAnchor: CenterAnchor {
+        return CenterAnchor(xAnchor: centerXAnchor, yAnchor: centerYAnchor, constant: .zero)
     }
-    
 }

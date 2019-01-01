@@ -24,6 +24,8 @@ extension NSLayoutConstraint {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        SimplyLayout.delegate?.simplyLayoutDidCreateConstraint(self)
+        
         return self
     }
 }
