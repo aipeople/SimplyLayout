@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SimplyLayout"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "A swift syntactic sugar for anchor based Auto Layout"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/aipeople/SimplyLayout.git", :tag => "1.0.2" }
+  s.source       = { :git => "https://github.com/aipeople/SimplyLayout.git", :tag => "1.0.4" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,10 +91,25 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "SimplyLayout", "SimplyLayout/**/*.{swift}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "SimplyLayout/{Core, Anchor, Group}/**/*.{swift}"
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
+
+  s.default_subspecs = 'Core', 'Anchor', 'Group'
+  s.subspec 'Core' do |sp|
+    sp.source_files = 'SimplyLayout/Core/**/*.{swift}'
+  end
+
+  s.subspec 'Anchor' do |sp|
+    sp.source_files = 'SimplyLayout/Anchor/**/*.{swift}'
+    sp.dependency 'SimplyLayout/Core'
+  end
+
+  s.subspec 'Group' do |sp|
+    sp.source_files = 'SimplyLayout/Group/**/*.{swift}'
+    sp.dependency 'SimplyLayout/Core'
+  end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
