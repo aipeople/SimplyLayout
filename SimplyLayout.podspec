@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SimplyLayout"
-  s.version      = "1.0.4"
+  s.version      = "1.0.5"
   s.summary      = "A swift syntactic sugar for anchor based Auto Layout"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/aipeople/SimplyLayout.git", :tag => "1.0.4" }
+  s.source       = { :git => "https://github.com/aipeople/SimplyLayout.git", :tag => "1.0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -98,7 +98,7 @@ Pod::Spec.new do |s|
 
   s.default_subspecs = 'Core', 'Anchor', 'Group'
   s.subspec 'Core' do |sp|
-    sp.source_files = 'SimplyLayout/Core/**/*.{swift}', '**/SimplyLayout.h'
+    sp.source_files = 'SimplyLayout/Core/**/*.{swift}', 'SimplyLayout/**/SimplyLayout.h'
   end
 
   s.subspec 'Anchor' do |sp|
