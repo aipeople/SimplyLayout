@@ -98,7 +98,7 @@ Pod::Spec.new do |s|
 
   s.default_subspecs = 'Core', 'Anchor', 'Group'
   s.subspec 'Core' do |sp|
-    sp.source_files = 'SimplyLayout/Core/**/*.{swift}'
+    sp.source_files = 'SimplyLayout/Core/**/*.{swift}', '**/SimplyLayout.h'
   end
 
   s.subspec 'Anchor' do |sp|
