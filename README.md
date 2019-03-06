@@ -28,6 +28,8 @@ pod 'SimplyLayout', :git => 'https://github.com/aipeople/SimplyLayout.git', :tag
 
 Example:
 ```` swift
+import SimplyLayout
+
 view.widthAnchor == 100
 // view.widthAnchor.constraint(equalToConstant: 100).isActive = true
 // view.translatesAutoresizingMaskIntoConstraints = false
