@@ -15,6 +15,46 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        let boxA = UIView()
+        let boxB = UIView()
+        view.addSubview(boxA)
+        view.addSubview(boxB)
+        
+        boxA.backgroundColor = .red
+        boxB.backgroundColor = .orange
+        
+        
+        view.edgeAnchor == view.superview!.edgeAnchor + UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        
+        let verticalConstraintGroup = NSLayoutConstraint.group {
+            
+            boxA.centerXAnchor == boxA.superview!.centerXAnchor
+            boxB.centerXAnchor == boxB.superview!.centerXAnchor
+            
+            boxA.heightAnchor  == boxB.heightAnchor
+            boxA.widthAnchor   == 40
+            boxB.widthAnchor   == 40
+            
+            boxA.topAnchor     == boxA.superview!.topAnchor + 10
+            boxB.topAnchor     == boxA.bottomAnchor + 10
+            boxB.bottomAnchor  == boxB.superview!.bottomAnchor - 10
+        }
+        
+        let horizontalConstraintGroup = NSLayoutConstraint.group(activated: false) {
+            
+            boxA.centerYAnchor == boxA.superview!.centerYAnchor
+            boxB.centerYAnchor == boxB.superview!.centerYAnchor
+            
+            boxA.widthAnchor   == boxB.widthAnchor
+            boxA.heightAnchor  == 40
+            boxB.heightAnchor  == 40
+            
+            boxA.leftAnchor    == boxA.superview!.leftAnchor + 10
+            boxB.leftAnchor    == boxA.rightAnchor + 10
+            boxB.rightAnchor   == boxB.superview!.rightAnchor - 10
+        }
+        
+        
         let box = UIView()
         box.backgroundColor = .lightGray
         view.addSubview(box)
@@ -47,6 +87,8 @@ class ViewController: UIViewController {
                 
                 UIView.animate(withDuration: 0.5, animations: {
                     centerYConstraint.constant = 100
+                    verticalConstraintGroup.deactivateAll()
+                    horizontalConstraintGroup.activateAll()
                     self.view.layoutIfNeeded()
                 })
             }

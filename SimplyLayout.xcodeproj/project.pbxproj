@@ -18,6 +18,7 @@
 		2394162A1F6B870D003C9B80 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239416291F6B870D003C9B80 /* Test.swift */; };
 		239A1B2421DB78E900383FA2 /* EdgeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A1B2321DB78E900383FA2 /* EdgeAnchor.swift */; };
 		239A1B2621DB82AE00383FA2 /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A1B2521DB82AE00383FA2 /* ConstraintGroup.swift */; };
+		239A1B2A21DBAA9200383FA2 /* CenterAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1AAF22178550D008E0580 /* CenterAnchor.swift */; };
 		23ECC28E1F7E24A800CADD68 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECC2871F7E24A700CADD68 /* NSLayoutConstraintExtension.swift */; };
 		23ECC28F1F7E24A800CADD68 /* AttributedDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECC2881F7E24A800CADD68 /* AttributedDimension.swift */; };
 		23ECC2901F7E24A800CADD68 /* AttributedConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECC2891F7E24A800CADD68 /* AttributedConstant.swift */; };
@@ -318,6 +319,7 @@
 				23ECC2941F7E24A800CADD68 /* AttributedAnchor.swift in Sources */,
 				23ECC28E1F7E24A800CADD68 /* NSLayoutConstraintExtension.swift in Sources */,
 				239A1B2421DB78E900383FA2 /* EdgeAnchor.swift in Sources */,
+				239A1B2A21DBAA9200383FA2 /* CenterAnchor.swift in Sources */,
 				23ECC2911F7E24A800CADD68 /* NSLayoutAxisAnchorExtension.swift in Sources */,
 				23ECC2921F7E24A800CADD68 /* SimplyLayout.swift in Sources */,
 			);

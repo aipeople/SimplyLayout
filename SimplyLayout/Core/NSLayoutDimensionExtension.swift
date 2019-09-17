@@ -9,7 +9,7 @@
 import UIKit
 
 
-public extension NSLayoutDimension {
+extension NSLayoutDimension {
     
     // MARK: To anchor
     @discardableResult

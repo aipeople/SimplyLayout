@@ -9,7 +9,7 @@
 import UIKit
 
 
-public extension NSLayoutXAxisAnchor {
+extension NSLayoutXAxisAnchor {
     
     @discardableResult
     public static func ==(lhs: NSLayoutXAxisAnchor, rhs: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
@@ -124,7 +124,7 @@ extension NSLayoutXAxisAnchor {
 }
 
 
-public extension NSLayoutYAxisAnchor {
+extension NSLayoutYAxisAnchor {
     
     @discardableResult
     public static func ==(lhs: NSLayoutYAxisAnchor, rhs: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
