@@ -47,30 +47,11 @@ extension NSLayoutXAxisAnchor {
         return lhs.constraint(greaterThanOrEqualTo: rhs.anchor, constant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
-    public static func +(lhs: NSLayoutXAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
-    public static func +(lhs: NSLayoutXAxisAnchor, rhs: Double) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
     public static func +(lhs: NSLayoutXAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutXAxisAnchor> {
         
         return AttributedAnchor(anchor: lhs, constant: rhs)
     }
     
-    public static func -(lhs: NSLayoutXAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs + -CGFloat(rhs)
-    }
-    
-    public static func -(lhs: NSLayoutXAxisAnchor, rhs: Double) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs + -CGFloat(rhs)
-    }
     
     public static func -(lhs: NSLayoutXAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutXAxisAnchor> {
         
@@ -79,26 +60,6 @@ extension NSLayoutXAxisAnchor {
 }
 
 extension NSLayoutXAxisAnchor {
-    
-    public static func ~(lhs: NSLayoutXAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutXAxisAnchor, rhs: Double) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutXAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutXAxisAnchor, rhs: Float) -> AttributedAnchor<NSLayoutXAxisAnchor> {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
     
     public static func ~(lhs: NSLayoutXAxisAnchor, rhs: UILayoutPriority) -> AttributedAnchor<NSLayoutXAxisAnchor> {
         
@@ -162,29 +123,9 @@ extension NSLayoutYAxisAnchor {
         return lhs.constraint(greaterThanOrEqualTo: rhs.anchor, constant: rhs.constant).setup(withPriority: rhs.priority, activated: rhs.shouldActivate)
     }
     
-    public static func +(lhs: NSLayoutYAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
-    public static func +(lhs: NSLayoutYAxisAnchor, rhs: Double) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
     public static func +(lhs: NSLayoutYAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutYAxisAnchor> {
         
         return AttributedAnchor(anchor: lhs, constant: rhs)
-    }
-    
-    public static func -(lhs: NSLayoutYAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs + -CGFloat(rhs)
-    }
-    
-    public static func -(lhs: NSLayoutYAxisAnchor, rhs: Double) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs + -CGFloat(rhs)
     }
     
     public static func -(lhs: NSLayoutYAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutYAxisAnchor> {
@@ -194,26 +135,6 @@ extension NSLayoutYAxisAnchor {
 }
 
 extension NSLayoutYAxisAnchor {
-    
-    public static func ~(lhs: NSLayoutYAxisAnchor, rhs: Int) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutYAxisAnchor, rhs: Double) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutYAxisAnchor, rhs: CGFloat) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: NSLayoutYAxisAnchor, rhs: Float) -> AttributedAnchor<NSLayoutYAxisAnchor> {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
     
     public static func ~(lhs: NSLayoutYAxisAnchor, rhs: UILayoutPriority) -> AttributedAnchor<NSLayoutYAxisAnchor> {
         

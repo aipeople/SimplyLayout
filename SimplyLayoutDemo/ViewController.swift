@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         boxB.backgroundColor = .orange
         
         
-        view.edgeAnchor == view.superview!.edgeAnchor + UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+//        view.edgeAnchor == view.superview!.edgeAnchor + UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         
         let verticalConstraintGroup = NSLayoutConstraint.group {
             
@@ -71,10 +71,10 @@ class ViewController: UIViewController {
         box.heightAnchor == box.superview!.heightAnchor * 0.25 + 40
         
         // Setup a constraint with priority by using `~`
-        box.heightAnchor == box.superview!.heightAnchor * 0.25 ~ 750
+        box.heightAnchor == box.superview!.heightAnchor * 0.25 ~ UILayoutPriority(750)
         
         // Setup a constraint with activate or inactivate state by using `--` or `++`
-        box.centerXAnchor == box.superview!.centerXAnchor ~ 750 // The constraint will be activated based on the value of `defaultActivation` in configs.
+        box.centerXAnchor == box.superview!.centerXAnchor ~ UILayoutPriority(750) // The constraint will be activated based on the value of `defaultActivation` in configs.
         box.centerXAnchor == --box.superview!.centerXAnchor + 100 // This will force the constraint stays in inactive mode after created.
         
         // Store the created constraint
