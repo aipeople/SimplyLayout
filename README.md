@@ -34,9 +34,9 @@ view.widthAnchor == 100
 // view.widthAnchor.constraint(equalToConstant: 100).isActive = true
 // view.translatesAutoresizingMaskIntoConstraints = false
 
-view.heightAnchor == view.superview!.heightAnchor * 0.25 + 40 ~ 750
+view.heightAnchor == view.superview!.heightAnchor * 0.25 + 40 ~ .defautHigh
 // let constraint = view.heightAnchor.constraint(equalTo: view.superview!.heightAnchor, multiplier: 0.25, constant: 40)
-// constraint.priority = UILayoutPriority(rawValue: 750)
+// constraint.priority = .defaultHigh
 // constraint.isActive = true
 // view.translatesAutoresizingMaskIntoConstraints = false
 ````
