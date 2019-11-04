@@ -30,33 +30,13 @@ public struct AttributedAnchor<AnchorType> where AnchorType: AnyObject {
 
 extension AttributedAnchor {
     
-    public static func +(lhs: AttributedAnchor, rhs: Int) -> AttributedAnchor {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
-    public static func +(lhs: AttributedAnchor, rhs: Double) -> AttributedAnchor {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
     public static func +(lhs: AttributedAnchor, rhs: CGFloat) -> AttributedAnchor {
         
         var anchor = lhs
         anchor.constant += rhs
         return anchor
     }
-    
-    public static func -(lhs: AttributedAnchor, rhs: Int) -> AttributedAnchor {
-        
-        return lhs - CGFloat(rhs)
-    }
-    
-    public static func -(lhs: AttributedAnchor, rhs: Double) -> AttributedAnchor {
-        
-        return lhs - CGFloat(rhs)
-    }
-    
+
     public static func -(lhs: AttributedAnchor, rhs: CGFloat) -> AttributedAnchor {
         
         return lhs + -rhs
@@ -67,21 +47,6 @@ extension AttributedAnchor {
 infix operator ~: SimplyLayoutPriorityPrecedenceGroup
 
 extension AttributedAnchor {
-
-    public static func ~(lhs: AttributedAnchor, rhs: Int) -> AttributedAnchor {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: AttributedAnchor, rhs: Double) -> AttributedAnchor {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: AttributedAnchor, rhs: CGFloat) -> AttributedAnchor {
-        
-        return lhs ~ Float(rhs)
-    }
     
     public static func ~(lhs: AttributedAnchor, rhs: Float) -> AttributedAnchor {
         

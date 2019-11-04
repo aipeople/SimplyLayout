@@ -34,31 +34,11 @@ public struct AttributedDimension {
 
 extension AttributedDimension {
     
-    public static func +(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
-    public static func +(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
-        
-        return lhs + CGFloat(rhs)
-    }
-    
     public static func +(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
         
         var dimension = lhs
         dimension.constant += rhs
         return dimension
-    }
-    
-    public static func -(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
-        
-        return lhs - CGFloat(rhs)
-    }
-    
-    public static func -(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
-        
-        return lhs - CGFloat(rhs)
     }
     
     public static func -(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
@@ -69,16 +49,6 @@ extension AttributedDimension {
 
 
 extension AttributedDimension {
-
-    public static func *(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
-        
-        return lhs * CGFloat(rhs)
-    }
-    
-    public static func *(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
-        
-        return lhs * CGFloat(rhs)
-    }
     
     public static func *(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
         
@@ -90,26 +60,6 @@ extension AttributedDimension {
 
 
 extension AttributedDimension {
-    
-    public static func ~(lhs: AttributedDimension, rhs: Int) -> AttributedDimension {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: AttributedDimension, rhs: Double) -> AttributedDimension {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: AttributedDimension, rhs: CGFloat) -> AttributedDimension {
-        
-        return lhs ~ Float(rhs)
-    }
-    
-    public static func ~(lhs: AttributedDimension, rhs: Float) -> AttributedDimension {
-        
-        return lhs ~ UILayoutPriority(rawValue: rhs)
-    }
     
     public static func ~(lhs: AttributedDimension, rhs: UILayoutPriority) -> AttributedDimension {
         
