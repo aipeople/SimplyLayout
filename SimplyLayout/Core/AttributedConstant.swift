@@ -27,7 +27,12 @@ public struct AttributedConstant {
 
 
 extension CGFloat {
-
+    
+    public static func ~(lhs: CGFloat, rhs: Float) -> AttributedConstant {
+        
+        return lhs ~ UILayoutPriority(rhs)
+    }
+    
     public static func ~(lhs: CGFloat, rhs: UILayoutPriority) -> AttributedConstant {
         
         return AttributedConstant(constant: lhs, priority: rhs)

@@ -61,6 +61,11 @@ extension NSLayoutXAxisAnchor {
 
 extension NSLayoutXAxisAnchor {
     
+    public static func ~(lhs: NSLayoutXAxisAnchor, rhs: Float) -> AttributedAnchor<NSLayoutXAxisAnchor> {
+        
+        return lhs ~ UILayoutPriority(rhs)
+    }
+    
     public static func ~(lhs: NSLayoutXAxisAnchor, rhs: UILayoutPriority) -> AttributedAnchor<NSLayoutXAxisAnchor> {
         
         return AttributedAnchor(anchor: lhs, constant: 0, priority: rhs)
@@ -135,6 +140,11 @@ extension NSLayoutYAxisAnchor {
 }
 
 extension NSLayoutYAxisAnchor {
+    
+    public static func ~(lhs: NSLayoutYAxisAnchor, rhs: Float) -> AttributedAnchor<NSLayoutYAxisAnchor> {
+        
+        return lhs ~ UILayoutPriority(rhs)
+    }
     
     public static func ~(lhs: NSLayoutYAxisAnchor, rhs: UILayoutPriority) -> AttributedAnchor<NSLayoutYAxisAnchor> {
         

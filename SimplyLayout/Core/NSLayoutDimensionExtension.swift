@@ -110,6 +110,11 @@ extension NSLayoutDimension {
 
 extension NSLayoutDimension {
     
+    public static func ~(lhs: NSLayoutDimension, rhs: Float) -> AttributedDimension {
+        
+        return lhs ~ UILayoutPriority(rhs)
+    }
+    
     public static func ~(lhs: NSLayoutDimension, rhs: UILayoutPriority) -> AttributedDimension {
         
         return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0, priority: rhs)
