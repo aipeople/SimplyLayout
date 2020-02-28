@@ -21,7 +21,24 @@ extension NSLayoutConstraint {
         self.isActive = activated
         
         if let view = firstItem as? UIView {
-            view.translatesAutoresizingMaskIntoConstraints = false
+            
+            let skip: Bool
+            if let superview = view.superview {
+                
+                if  view == (superview as? UITableViewCell)?.contentView ||
+                    view == (superview as? UITableViewHeaderFooterView)?.contentView ||
+                    view == (superview as? UICollectionViewCell)?.contentView {
+                    skip = true
+                } else {
+                    skip = false
+                }
+            } else {
+                skip = false
+            }
+            
+            if !skip {
+                view.translatesAutoresizingMaskIntoConstraints = false
+            }
         }
         
         if  SimplyLayout.postNotificationWhenConstrantCreate {
