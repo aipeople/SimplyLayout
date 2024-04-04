@@ -62,7 +62,7 @@ extension Array where Element == NSLayoutConstraint {
 
 extension NSLayoutConstraint {
     
-    open class func group(activated: Bool = SimplyLayout.config.defaultActivation, _ action: () -> ()) -> [NSLayoutConstraint] {
+    public class func group(activated: Bool = SimplyLayout.config.defaultActivation, _ action: () -> ()) -> [NSLayoutConstraint] {
         
         assert(Thread.isMainThread, "Constraint group must be created on main thread")
         

@@ -92,23 +92,23 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "SimplyLayout/{Core, Anchor, Group}/**/*.{swift}"
+  s.source_files  = "Sources/SimplyLayout/{Core, Anchor, Group}/**/*.{swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
   s.default_subspecs = 'Core', 'Anchor', 'Group'
   s.subspec 'Core' do |sp|
-    sp.source_files = 'SimplyLayout/Core/**/*.{swift}', 'SimplyLayout/**/SimplyLayout.h'
+    sp.source_files = 'Sources/SimplyLayout/Core/**/*.{swift}', 'Sources/SimplyLayout/SimplyLayout.h'
   end
 
   s.subspec 'Anchor' do |sp|
-    sp.source_files = 'SimplyLayout/Anchor/**/*.{swift}'
+    sp.source_files = 'Sources/SimplyLayout/Anchor/**/*.{swift}'
     sp.dependency 'SimplyLayout/Core'
   end
 
   s.subspec 'Group' do |sp|
-    sp.source_files = 'SimplyLayout/Group/**/*.{swift}'
+    sp.source_files = 'Sources/SimplyLayout/Group/**/*.{swift}'
     sp.dependency 'SimplyLayout/Core'
   end
 
