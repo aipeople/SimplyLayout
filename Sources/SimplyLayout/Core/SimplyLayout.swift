@@ -6,7 +6,7 @@
 //  Copyright © 2017 aipeople. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 precedencegroup SimplyLayoutPriorityPrecedenceGroup {
