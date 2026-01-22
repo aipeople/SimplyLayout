@@ -125,11 +125,11 @@ extension NSLayoutDimension {
     
     public static prefix func --(lhs: NSLayoutDimension) -> AttributedDimension {
         
-        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0)
+        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0, shouldActivate: false)
     }
     
     public static prefix func ++(lhs: NSLayoutDimension) -> AttributedDimension {
         
-        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0)
+        return AttributedDimension(dimension: lhs, multiplier: 1, constant: 0, shouldActivate: true)
     }
 }
